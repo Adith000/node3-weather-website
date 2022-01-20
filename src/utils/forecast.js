@@ -12,9 +12,12 @@ request({url,json:true},(error,{body})=>{
     else if (body.error){
     callback('Unabel to find location . Try another time',undefined )
     }else{
-    callback(undefined,'The weather today is '+body.current.weather_descriptions[0]+ '. It is Currently '+ body.current.temperature+' degrees out there. But it feels like ' + body.current.feelslike +' degress out')
+    callback(undefined,'The weather today is '+body.current.weather_descriptions[0]+ '. It is Currently '+ body.current.temperature+' degrees out there. the humidity is ' + body.current.humidity +' degress ,with a precipitation of '+body.current.precip+' % chance')
     
 }
 })
 }
+
+
+
 module.exports=forecast
